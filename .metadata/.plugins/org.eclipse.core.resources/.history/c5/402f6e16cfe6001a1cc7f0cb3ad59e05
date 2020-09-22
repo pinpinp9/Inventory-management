@@ -1,0 +1,27 @@
+package Entity;
+
+public class admin {
+
+	public static String username;
+	public static String password;
+	public static String getUsername() {
+		return username;
+	}
+	public static void setUsername(String username) {
+		admin.username = username;
+	}
+	public static String getPassword() {
+		return password;
+	}
+	public static void setPassword(String password) {
+		admin.password = password;
+	}
+	@Override
+	public String toString() {
+		return "admin [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
+	
+	
+}

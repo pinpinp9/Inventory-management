@@ -1,0 +1,56 @@
+package sql;
+import Entity.*;
+
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import Dao.*;
+public class insert {
+	
+	
+	//add-area.jsp
+	  public static void insertArea(EntityArea area) {
+	       try {
+	    		Connection con= database.getConnection();
+	    		Statement st=con.createStatement();    	            
+	            st.execute("INSERT INTO producttype (area_name,description)VALUES('"+area.getAreaName()+"','"+area.getDescription()+"')");
+	            System.out.println("Inserted successfully!");	            
+	        } catch(Exception exception) {
+	            exception.printStackTrace();
+	        }
+	    }
+	  
+	//add-product type
+	  
+	  public static void insertProductType(EntityProductType ProductType) {
+	       try {
+	    		Connection con= database.getConnection();
+	    		Statement st=con.createStatement();    	            
+	            st.execute("INSERT INTO producttype (type,description)VALUES('"+ProductType.getType()+"','"+ProductType.getDescription()+"')");
+	            System.out.println("Inserted successfully!");	            
+	        } catch(Exception exception) {
+	            exception.printStackTrace();
+	        }
+	    }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	}
+
+    //add-product type
+
+
+
+
+
+
+
+

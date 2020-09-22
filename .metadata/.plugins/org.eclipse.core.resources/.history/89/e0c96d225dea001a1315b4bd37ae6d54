@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Homepage</title>
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
+    <script>  
+    $(function(){ 
+      $("#layout").load("dashboard-layout.jsp");  
+    }); 
+    </script>  
+
+
+    </head> 
+</head>
+<body>
+    <div id="layout"></div> 
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Product report</h1>
+        
+
+<table class="table table-hover">
+    <thead>
+      <tr>  
+        <th>Number</th>   
+        <th>SKU</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Area</th>   
+        <th>Description</th>
+        <th>Cost</th>
+        <th>Manufacturer</th>
+        <th>Inventory</th>
+        <th>Image</th>
+        <th>Edit | Delete</th>
+        
+      </tr>
+      
+    </thead>
+    <tbody>
+      
+<%
+ArrayList<EntityManufacture> EntityManufacture = select.getManufacture();
+
+int j =1;
+  for(int i =0; i <EntityManufacture.size(); i++ ){ 
+    String name = EntityManufacture.get(i).getName();
+     String address = EntityManufacture.get(i).getAddress();
+      String number = EntityManufacture.get(i).getContactNumber();
+       String email = EntityManufacture.get(i).getEmail();
+        String web = EntityManufacture.get(i).getWebsite();
+         String desc = EntityManufacture.get(i).getDescription();%>
+         
+   
+       <% out.println("</tr>");%>
+       <% out.println("<td>"+ j +"</td>");%>
+       <% out.println("<td>"+name+"</td>");%>
+       <% out.println("<td>"+address+"</td>");%>
+       <% out.println("<td>"+number+"</td>");%>
+       <% out.println("<td>"+email+"</td>");%>
+       <% out.println("<td>"+web+"</td>");%>
+       <% out.println("<td>"+desc+"</td>");%>       
+       <% out.println("<td><a href='#'>Edit</a>   <a href='#'>Delete</a></td>");%>
+       <% out.println("</tr>");%>
+       
+    <%	 j++; }
+
+ %>
+ 
+    </tbody>
+    </table>
+
+</body>
+</html>

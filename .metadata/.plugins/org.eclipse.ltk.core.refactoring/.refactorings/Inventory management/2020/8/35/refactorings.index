@@ -1,0 +1,28 @@
+1598303277460	Move source folder
+1598304167364	Delete element
+1598398023329	Rename type 'admin'
+1598401807453	Move 'index.html' to 'WEB-INF'
+1598401815117	Move 'login.html' to 'WEB-INF'
+1598401993813	Move 'login.html' to 'WebContent'
+1598404574160	Delete element
+1598406702272	Delete element
+1598409234870	Delete element
+1598416610657	Delete element
+1598416774630	Delete element
+1598417204517	Move 'login.jsp' to 'WebContent'
+1598417218933	Move 'index.jsp' to 'WebContent'
+1598418193002	Move 'dashboard-layout.html' to 'static'
+1598418387671	Move 'dashboard-layout.html' to 'WebContent'
+1598418485478	Move 'bootstrap.min.css' to 'WebContent'
+1598418487832	Move 'dashboard.css' to 'WebContent'
+1598418492909	Move 'dashboard' to 'WebContent'
+1598418788217	Move 'add-product.jsp' to 'WebContent'
+1598418790796	Move 'create-order.jsp' to 'WebContent'
+1598418792788	Move 'inventory-report.jsp' to 'WebContent'
+1598418794728	Move 'product-report.jsp' to 'WebContent'
+1598423082083	Delete element
+1598423135118	Delete element
+1598449319731	Rename type 'area'
+1598568894904	Delete element
+1598588359424	Rename type 'productType'
+1598607473562	Delete element

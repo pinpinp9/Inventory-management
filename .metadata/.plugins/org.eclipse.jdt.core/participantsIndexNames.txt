@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\Admin\Desktop\IT\Inventory system-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\663975292.index
+\Inventory management\src
+C:\Users\Admin\Desktop\IT\Inventory system-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\495239344.index
+\Inventory management\src

@@ -1,0 +1,41 @@
+package Entity;
+
+public class EntityProduct {
+
+	private String SKU;
+	private String name;
+	private String type;
+	private String area;
+	private String description;
+	private double cost;
+	private String manufacture;
+	private String inventory;
+	private String image;
+	private String keyword;
+	
+	
+	
+	
+	public EntityProduct() {
+		super();
+	}
+
+	public EntityProduct(String sKU, String name, String type, String area, String description, double cost,
+			String manufacture, String inventory, String image, String keyword) {
+		super();
+		SKU = sKU;
+		this.name = name;
+		this.type = type;
+		this.area = area;
+		this.description = description;
+		this.cost = cost;
+		this.manufacture = manufacture;
+		this.inventory = inventory;
+		this.image = image;
+		this.keyword = keyword;
+	}
+	
+	
+	
+	
+}

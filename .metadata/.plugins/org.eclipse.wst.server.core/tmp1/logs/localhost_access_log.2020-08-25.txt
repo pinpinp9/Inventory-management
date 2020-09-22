@@ -1,0 +1,4 @@
+127.0.0.1 - - [25/Aug/2020:08:05:48 +1000] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [25/Aug/2020:08:05:50 +1000] "GET /Inventory_management/servlet/Servlet.admin HTTP/1.1" 404 801
+0:0:0:0:0:0:0:1 - - [25/Aug/2020:08:06:05 +1000] "GET /Inventory_management/index.html HTTP/1.1" 200 136
+0:0:0:0:0:0:0:1 - - [25/Aug/2020:11:19:51 +1000] "GET /Inventory_management/servlet/Servlet.admin HTTP/1.1" 404 801

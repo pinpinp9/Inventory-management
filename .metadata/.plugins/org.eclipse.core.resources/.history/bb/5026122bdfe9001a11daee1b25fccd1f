@@ -1,0 +1,88 @@
+package sql;
+import Entity.*;
+
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import javax.servlet.http.HttpSession;
+
+import Dao.*;
+public class insert {
+	
+	
+	//add-area.jsp
+	  public static void insertArea(EntityArea area) {
+	       try {
+	    		Connection con= database.getConnection();
+	    		Statement st=con.createStatement();    	            
+	            st.execute("INSERT INTO producttype (area_name,description)VALUES('"+area.getAreaName()+"','"+area.getDescription()+"')");
+	            System.out.println("Inserted successfully!");
+	            
+	        } catch(Exception exception) {
+	            exception.printStackTrace();
+	        }
+	    }
+	  
+	//add-product type
+	  
+	  public static void insertProductType(EntityProductType ProductType) {
+	       try {
+	    		Connection con= database.getConnection();
+	    		Statement st=con.createStatement();    	            
+	            st.execute("INSERT INTO `product type`(type,description) VALUES ('"+ProductType.getType()+"','"+ProductType.getDescription()+"')");
+	            
+	            System.out.println("Inserted successfully!");	            
+	        } catch(Exception exception) {
+	            exception.printStackTrace();
+	        }
+	    }
+	  
+	  
+	//add-manufacture
+	  
+	  public static void insertManufacture(EntityManufacture Manufacture) {
+	       try {
+	    		Connection con= database.getConnection();
+	    		Statement st=con.createStatement();    	            
+	            st.execute("INSERT INTO `manufacturer`(name,address,`contact number`,email,website,description) VALUES ('"+Manufacture.getName()+"','"+Manufacture.getAddress()+"','"+Manufacture.getContactNumber()+"','"+Manufacture.getEmail()+"','"+Manufacture.getWebsite()+"','"+Manufacture.getDescription()+"')");
+	           
+	            System.out.println("Inserted successfully!");	            
+	        } catch(Exception exception) {
+	            exception.printStackTrace();
+	        }
+	    }  
+	  
+	  //createProduct.jsp	  
+	  public static void insertProduct(EntityProduct product ) {
+		  HttpSession session = request.getSession();
+	       try {
+	    		Connection con= database.getConnection();
+	    		Statement st=con.createStatement();    	            
+	            st.execute("INSERT INTO `product`(SKU,name,`type`,area,description,`product cost`,manufacture,inventory,image,keyword) VALUES ('"+product.getSKU()+"','"+product.getName()+"','"+product.getType()+"','"+product.getArea()+"','"+product.getDescription()+"','"+product.getCost()+"','"+product.getManufacture()+"','"+product.getInventory()+"','"+product.getImage()+"','"+product.getKeyword()+"')");
+	            System.out.println("Inserted successfully!");	
+	           	
+	            request.setAttribute("alertMsg", "Inserted successfully!"); 
+	        } catch(Exception exception) {
+	            exception.printStackTrace();
+	        }
+	    }  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	}
+
+
+
+
+
+
+
+
+
+

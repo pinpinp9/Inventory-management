@@ -1,0 +1,36 @@
+package sql;
+
+import java.sql.Connection;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import Dao.database;
+import Entity.EntityAdmin;
+
+public class login {
+	static int status=0;
+	
+	public static boolean verify(EntityAdmin admin) throws SQLException{
+		boolean status = false;
+		Connection con= database.getConnection();
+		PreparedStatement ps;
+		try {
+			ps = con.prepareStatement("Select username and password from admin where username=? and password=?");
+			
+			ps.setString(2,admin.getUsername());
+			ps.setString(3,admin.getPassword());
+			
+			
+			ResultSet rs=ps.executeQuery();
+			status = rs.next();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return status;
+	
+		
+	}
+}

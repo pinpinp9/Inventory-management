@@ -1,0 +1,36 @@
+package Entity;
+
+public class EntityArea {
+   private String areaName,description;
+
+   
+public EntityArea() {
+	super();
+}
+
+public EntityArea(String areaName, String description) {
+	super();
+	this.areaName = areaName;
+	this.description = description;
+}
+
+public String getAreaName() {
+	return areaName;
+}
+
+public void setAreaName(String areaName) {
+	this.areaName = areaName;
+}
+
+public String getDescription() {
+	return description;
+}
+
+public void setDescription(String description) {
+	this.description = description;
+}
+   
+   
+   
+   
+}

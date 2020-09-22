@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\Admin\Desktop\IT\Inventory system-jsp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1343676626.index
+1004272646.index
+3030093520.index
+1204023512.index
+1216717268.index
+4183374372.index

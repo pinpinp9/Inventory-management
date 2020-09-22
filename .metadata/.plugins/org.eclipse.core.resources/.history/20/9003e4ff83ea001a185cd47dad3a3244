@@ -1,0 +1,221 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="Dao.database.*" %>
+<%@ page import="Servlet.*" %>
+<%@ page import="sql.*" %>
+
+    
+    
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Dashboard Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+      .dropdown-btn {
+  		padding: 6px 8px 6px 16px;
+  		text-decoration: none;
+  		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  		font-size:.875rem;
+  		font-weight:500;
+  		display: block;
+  		border: none;
+  		background: none;
+  		width:100%;
+  		text-align: left;
+  		cursor: pointer;
+  		outline: none;
+		}
+	.dropdown-btn:hover {
+ 	 color: #d1caca;
+	}
+	.dropdown-container{
+  	 display: none;
+ 	 background-color: #e7e2e2;
+ 	 padding: 10px; 	 
+	}     
+	.dropdown-container a  {
+	 display:flex;
+	 -ms-flex-wrap:wrap;
+	 flex-wrap:wrap;
+	 -ms-flex-align:center;
+	 align-items:center;
+	 -ms-flex-pack:justify;
+	 justify-content:space-between;
+	 padding:.5rem
+	}
+      
+    </style>
+    <script>
+    
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+  }
+  });
+}
+    
+	</script>
+    
+    
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="InventoryAdministration.html">Inventory administration</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+   <a class="nav-link" href="#">Search</a>
+  
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <div class="dropdown-btn">Products</div>
+  			<div class="dropdown-container">  				
+    			<a href="#">Product report</a>
+    			<a href="#">Add new product</a>
+   				<a href="#">Add new product type</a>
+  				</div>   
+            </li>
+           <li class="nav-item">
+            <div class="dropdown-btn">Manufacture</div>
+  			<div class="dropdown-container">  				
+    			<a href="#">Manufacture report</a>
+    			<a href="#">Add new manufacture</a>
+   				
+  				</div>   
+            </li>
+           <li class="nav-item">
+            <div class="dropdown-btn">Order</div>
+  			<div class="dropdown-container">  				
+    			<a href="#">Create new order</a>
+    			<a href="#">Order report</a>   				
+  				</div>   
+            </li>
+          <li class="nav-item">
+            <div class="dropdown-btn">Stock area</div>
+  			<div class="dropdown-container">  				
+    			<a href="#">Area report</a>
+    			<a href="#">Create new area</a>
+   				</div>   
+            </li>
+          <li class="nav-item">
+            <div class="dropdown-btn">Inventory</div>
+  			<div class="dropdown-container">  				
+    			<a href="#">Inventory report</a>
+    			</div>   
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add-product-type.jsp">
+              <span data-feather="users"></span>
+              Add product type
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manufacture.jsp">
+              <span data-feather="bar-chart-2"></span>
+              Add manufacture
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manufacturer-report.jsp">
+              <span data-feather="layers"></span>
+              Manufacturer report
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="add-area.jsp">
+              <span data-feather="home"></span>
+            Add area <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="area-report.jsp">
+              <span data-feather="home"></span>
+            Area Report <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Change password
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+ 
+        </ul>
+        
+      </div>
+    </nav>
+
+    

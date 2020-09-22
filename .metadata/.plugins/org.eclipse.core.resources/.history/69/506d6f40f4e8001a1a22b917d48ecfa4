@@ -1,0 +1,10 @@
+package Entity;
+
+public class EntityManufacture {
+
+	private String name;
+	private String address;
+	private String contactNumber;
+	private String email;
+	private String website;
+}

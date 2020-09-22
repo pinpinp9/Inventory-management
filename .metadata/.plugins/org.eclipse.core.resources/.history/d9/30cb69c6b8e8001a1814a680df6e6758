@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+
+    </head> 
+<% String message = (String)request.getAttribute("alertMsg");%>
+<script type="text/javascript">
+    var msg = "<%=message%>";
+    alert(msg);
+</script>
+<body>
+   
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Login</h1>
+     </div>
+
+            <div class="col-md-8 order-md-1">
+                <form class="needs-validation" action="<%=request.getContextPath()%>/admin" method="post" novalidate>
+                  <div class="row">
+                     <div class="col-md-6 mb-3">
+                      <label for="username">username</label>
+                      <input type="text" class="form-control" name="username" id="username" placeholder="" value="" required>
+                      <label for="Address">Password</label>
+                      <input type="password" class="form-control" name="password" id="pass" placeholder="" value="" required>
+          			 </div>
+          		</div>
+                    <button class="btn btn-primary" type="submit" name="submit">Login</button>
+                </form>
+                <br>
+                </div>
+          
+    </main>
+</body>
+</html>
